@@ -1,0 +1,16 @@
+<h1>{{ service.value }}</h1>
+
+<hr>
+
+<button (click)="increment()" class="increment">Increment</button>
+
+<button (click)="decrement()" class="decrement">Decrement</button>
+
+<p class="message">
+  {{ service.message }}
+</p>
+
+<p class="message2" *ngIf="limitReached()">
+  Limit reached!
+</p>
+
