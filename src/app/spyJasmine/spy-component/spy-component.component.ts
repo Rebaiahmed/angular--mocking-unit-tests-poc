@@ -10,10 +10,6 @@ export class SpyComponentComponent implements OnInit {
 
   constructor(public service:ExampleServiceService) { }
 
-  ngOnInit(): void {
-  }
-
-
   increment() {
     this.service.increment();
   }
@@ -24,6 +20,10 @@ export class SpyComponentComponent implements OnInit {
 
   limitReached() {
     return this.service.minimumOrMaximumReached();
+  }
+
+
+  ngOnInit(): void {
   }
 
 

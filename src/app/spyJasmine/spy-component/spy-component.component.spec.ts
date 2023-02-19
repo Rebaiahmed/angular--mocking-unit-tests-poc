@@ -61,10 +61,10 @@ describe('SpyComponentComponent', () => {
 
 
   it('should call increment on the service', () => {
+  incrementSpy=  spyOn(incrementDecrementService, 'increment').and.callThrough();
     debugElement
       .query(By.css('button.increment'))
       .triggerEventHandler('click', null);
-
     expect(incrementDecrementService.value).toBe(1);
     expect(incrementSpy).toHaveBeenCalledTimes(1);
   });
@@ -74,9 +74,7 @@ describe('SpyComponentComponent', () => {
 
   it(`should show 'Limit reached' message`, () => {
     fixture.detectChanges();
-
     const message = debugElement.query(By.css('p.message2')).nativeElement.innerText;
-
     expect(message).toEqual('Limit reached!');
   });
 

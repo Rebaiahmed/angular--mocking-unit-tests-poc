@@ -32,25 +32,9 @@ fdescribe('LoginComponent', () => {
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
     component = fixture.componentInstance;
-   // service = debugElement.injector.get(AuthService);
     service = TestBed.inject(AuthService);
-    //spy = spyOn(service, 'isAuthenticated').and.callThrough();
-   // let secondSpy=  spyOn(service, 'isAuthenticated').and.callThrough();
    fixture.detectChanges();
   });
-
-
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
-
-
-  xit('needsLogin returns true when the user has not been authenticated', () => {
-    mockService.authenticated = false;
-    expect(component.needsLogin()).toBeTruthy();
-  });
-
 
   fit('needsLogin returns true when the user has not been authenticated (spy version)', () => {
     spy = spyOn(service, 'isAuthenticated').and.callThrough();
@@ -62,7 +46,14 @@ fdescribe('LoginComponent', () => {
     expect(spy).toHaveBeenCalled();
   });
 
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
 
+  xit('needsLogin returns true when the user has not been authenticated', () => {
+    mockService.authenticated = false;
+    expect(component.needsLogin()).toBeTruthy();
+  });
 
   xit('needsLogin returns true when the user has not been authenticated (jasmine.createSpyObject)', () => {
     const jasmineSpy = jasmine.createSpyObj('AuthService', ['isAuthenticated']);;
