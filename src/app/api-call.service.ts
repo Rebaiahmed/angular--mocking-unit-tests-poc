@@ -18,4 +18,8 @@ export class ApiCallService {
   getData(): Observable<MyData[]> {
     return this.http.get<MyData[]>('https://jsonplaceholder.typicode.com/todos');
   }
+
+  getMessage(): Observable<string> {
+    return this.http.get<string>('https://example.com/api/message');
+  }
 }

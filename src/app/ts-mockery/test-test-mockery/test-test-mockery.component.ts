@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiCallService, MyData } from '../api-call.service';
+import { ApiCallService, MyData } from 'src/app/api-call.service';
+
 
 @Component({
   selector: 'app-test-test-mockery',

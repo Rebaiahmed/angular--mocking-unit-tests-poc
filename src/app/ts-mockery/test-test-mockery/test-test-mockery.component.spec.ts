@@ -1,9 +1,10 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { ApiCallService, MyData } from '../api-call.service';
+
 import { Mock } from 'ts-mockery';
 import { TestTestMockeryComponent } from './test-test-mockery.component';
 import { of } from 'rxjs';
+import { ApiCallService, MyData } from 'src/app/api-call.service';
 
 describe('TestTestMockeryComponent', () => {
   let component: TestTestMockeryComponent;

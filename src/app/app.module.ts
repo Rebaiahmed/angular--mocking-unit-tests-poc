@@ -6,13 +6,15 @@ import { SpyComponentComponent } from './spyJasmine/spy-component/spy-component.
 import { LoginComponent } from './spyJasmine/login/login.component';
 import { TestTestMockeryComponent } from './ts-mockery/test-test-mockery/test-test-mockery.component';
 import { HttpClientModule } from '@angular/common/http';
+import { MycomponentComponent } from './ts-mockito/mycomponent/mycomponent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     SpyComponentComponent,
     LoginComponent,
-    TestTestMockeryComponent
+    TestTestMockeryComponent,
+    MycomponentComponent
   ],
   imports: [
     BrowserModule,
