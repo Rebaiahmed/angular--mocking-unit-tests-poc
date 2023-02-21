@@ -7,6 +7,8 @@ import { LoginComponent } from './spyJasmine/login/login.component';
 import { TestTestMockeryComponent } from './ts-mockery/test-test-mockery/test-test-mockery.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MycomponentComponent } from './ts-mockito/mycomponent/mycomponent.component';
+import { MyComponentComponent } from './ng-mocks/my-component/my-component.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,14 @@ import { MycomponentComponent } from './ts-mockito/mycomponent/mycomponent.compo
     SpyComponentComponent,
     LoginComponent,
     TestTestMockeryComponent,
-    MycomponentComponent
+    MycomponentComponent,
+    MyComponentComponent
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

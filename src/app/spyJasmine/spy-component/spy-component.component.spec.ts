@@ -23,9 +23,10 @@ describe('SpyComponentComponent', () => {
     component = fixture.componentInstance;
     debugElement = fixture.debugElement;
     incrementDecrementService = debugElement.injector.get(ExampleServiceService);
+
+
     incrementSpy=  spyOn(incrementDecrementService, 'increment').and.callThrough();
-    exampleServiceSpy= spyOn(incrementDecrementService,'minimumOrMaximumReached').and.returnValue(true);
-    fixture.detectChanges();
+    //fixture.detectChanges();
   });
 
   it('should create', () => {
@@ -42,6 +43,15 @@ describe('SpyComponentComponent', () => {
     const value = debugElement.query(By.css('h1')).nativeElement.innerText;
 
     expect(value).toEqual('1');
+  });
+
+  fit(`should show 'Limit reached' message`, () => {
+    exampleServiceSpy= spyOn(incrementDecrementService,'minimumOrMaximumReached').and.returnValue(false);
+    fixture.detectChanges();
+
+    const message = debugElement.query(By.css('p.message')).nativeElement.innerText;
+
+    expect(message).toEqual('Limit reached!');
   });
 
   it('should stop at 15 and show maximum message', () => {
